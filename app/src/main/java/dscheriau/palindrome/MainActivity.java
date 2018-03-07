@@ -32,15 +32,18 @@ public class MainActivity extends AppCompatActivity {
                     if(!(word.length()<5)){
                         if( isPalindrome(word) ){
                             //word is a palindrome
-
+                            msg= "Your ord is a Palindrome!";
                         }else{
                             //word isn't a palindrome
+                            msg = "Your word isn't a Palindrome!";
                         }
                     }else{
                         //word is to short
+                       msg = "Your word is too short! ";
                     }
                 }else{
                     //pls enter a word
+                    msg = "Please enter a word !";
                 }
             }
         });
