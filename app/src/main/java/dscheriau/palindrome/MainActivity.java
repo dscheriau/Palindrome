@@ -25,9 +25,29 @@ public class MainActivity extends AppCompatActivity {
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String word = etInput.getText().toString();
+                String msg = "";
 
+                if(!word.equals("")){
+                    if(!(word.length()<5)){
+                        if( isPalindrome(word) ){
+                            //word is a palindrome
+
+                        }else{
+                            //word isn't a palindrome
+                        }
+                    }else{
+                        //word is to short
+                    }
+                }else{
+                    //pls enter a word
+                }
             }
         });
+    }
+
+    public boolean isPalindrome(String word){
+        return word.equals(new StringBuilder(word).reverse().toString());
     }
 
 }
