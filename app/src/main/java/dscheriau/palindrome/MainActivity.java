@@ -1,5 +1,7 @@
 package dscheriau.palindrome;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     if(!(word.length()<5)){
                         if( isPalindrome(word) ){
                             //word is a palindrome
-                            msg= "Your ord is a Palindrome!";
+                            msg= "Your word is a Palindrome!";
                         }else{
                             //word isn't a palindrome
                             msg = "Your word isn't a Palindrome!";
@@ -45,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
                     //pls enter a word
                     msg = "Please enter a word !";
                 }
+
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this);
+                dialogBuilder.setTitle("Result");
+                dialogBuilder.setMessage(msg);
+                dialogBuilder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog dialog = dialogBuilder.create();
+                dialog.show();
             }
         });
     }
