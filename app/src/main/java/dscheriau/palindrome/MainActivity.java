@@ -28,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String word = etInput.getText().toString();
-                String msg = "";
+                String msg;
+                String leer = " ";
 
-                if(!word.equals("")){
+                if(!word.equals(leer)){
                     if(!(word.length()<5)){
                         if( isPalindrome(word) ){
                             //word is a palindrome
